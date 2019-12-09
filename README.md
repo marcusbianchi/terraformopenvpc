@@ -1,34 +1,34 @@
 # terraformopenvpc
 Sample to create an AWS infrastructure to with an OpenVPC server
 
-Installation
+# Installation
 The infrastructure will be created on AWS Ec2 instance, using Terraform. This instance will use a AMI that already contains the OpenVPC software configured.
 
-Prerequisites
-
+## Prerequisites
 Required software:
-
-AWS CLI (https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
-Terraform (https://learn.hashicorp.com/terraform/getting-started/install.html)
-AWS credentials configured properly (https://www.terraform.io/docs/providers/aws/index.html)
-Sample Infrastructure
+- AWS CLI (https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
+- Terraform (https://learn.hashicorp.com/terraform/getting-started/install.html)
+- AWS credentials configured properly (https://www.terraform.io/docs/providers/aws/index.html)
+## Sample Infrastructure
 This example will set the following resources:
-
 1 - AWS VPC
 3 - AWS Subnets on different subregions
 1 - Internet Gateway
 1 - EC2 Instance with OpenVPN AMI installed with public IP
 Clone Repository:
-
-git clone https://gitlab.gerdau.digital/industrial/cratedb.git
+```bash
+git clone https://github.com/marcusbianchi/terraformopenvpc.git
  
-cd cratedb
+cd terraformopenvpc
+```
 Execute init command
-
+```bash
 terraform init
+```
 Start the Infrastructure
-
+```bash
 terraform plan -out "planfile"
+```
 Review the Plan of Execution BEFORE executing it
 
 To execute the changes
@@ -61,7 +61,7 @@ For the first setup answer the questions as bellow, but first write DELETE to er
 - Use local authentication via internal DB?  yes
 - Private subnets detected: [‘10.0.9.0/24’] Should private subnets be accessible to clients by default? yes
 - Do you wish to login to the Admin UI as “openvpn”? yes
-- > Please specify your OpenVPN-AS license key (or leave blank to specify later): leave blank
+- Please specify your OpenVPN-AS license key (or leave blank to specify later): leave blank
 Set the openvpn user ‘s password
 ```bash
 sudo passwd openvpn

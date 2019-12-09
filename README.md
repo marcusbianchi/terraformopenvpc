@@ -62,6 +62,7 @@ For the first setup answer the questions as bellow, but first write DELETE to er
 - Private subnets detected: [‘10.0.9.0/24’] Should private subnets be accessible to clients by default? yes
 - Do you wish to login to the Admin UI as “openvpn”? yes
 - Please specify your OpenVPN-AS license key (or leave blank to specify later): leave blank
+
 Set the openvpn user ‘s password
 ```bash
 sudo passwd openvpn
